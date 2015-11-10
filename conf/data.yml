@@ -1,0 +1,51 @@
+Donation(a):
+    amount : 210
+    method : paypal
+
+Donation(b):
+    amount : 20
+    method : cash
+
+Donation(c):
+    amount : 330
+    method : cash
+
+Donation(d):
+    amount : 10
+    method : paypal 
+
+
+Donor(homer):
+    usaCitizen: true
+    firstName: Homer
+    lastName: Simpson
+    email: homer@simpson.com
+    password: secret
+
+Donor(marge):
+    usaCitizen: true
+    firstName: Marge
+    lastName: Simpson
+    email: marge@simpson.com
+    password: secret
+
+Donor(lisa):
+    usaCitizen: true
+    firstName: Lisa
+    lastName: Simpson
+    email: lisa@simpson.com
+    password: secret
+
+Donor(bart):
+    usaCitizen: true
+    firstName: Bart
+    lastName: Simpson
+    email: bart@simpson.com
+    password: secret
+
+Donor(maggie):
+    usaCitizen: true
+    firstName: Maggie
+    lastName: Simpson
+    email: maggie@simpson.com
+    password: secret

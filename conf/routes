@@ -5,6 +5,19 @@
 # Home page
 GET     /                                       Application.index
 
+GET     /api/donors                          DonationServiceAPI.getAllDonors
+GET     /api/donors/{id}                     DonationServiceAPI.getDonor
+POST    /api/donors                          DonationServiceAPI.createDonor
+DELETE  /api/donors/{id}                     DonationServiceAPI.deleteDonor
+DELETE  /api/donors                          DonationServiceAPI.deleteAllDonors
+
+
+GET     /api/donations                       DonationServiceAPI.getAllDonations
+GET     /api/donations/{id}                  DonationServiceAPI.getDonation
+POST    /api/donations                       DonationServiceAPI.createDonation
+DELETE  /api/donations/{id}                  DonationServiceAPI.deleteDonation
+DELETE  /api/donations                       DonationServiceAPI.deleteAllDonations
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
