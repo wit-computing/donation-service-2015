@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 
 import models.Donation;
+import models.Donor;
 import play.mvc.Controller;
 
 public class DonationsAPI extends Controller
@@ -17,25 +18,39 @@ public class DonationsAPI extends Controller
     List<Donation> donations = Donation.findAll();
     renderJSON(gson.toJson(donations));
   }
-
-  public static void getDonation (Long id)
+  
+  public static void deleteAllDonations()
   {
-   Donation donation = Donation.findById(id);
+    Donation.deleteAll();
+    renderText("success");
+  }
+
+  public static void getDonations (Long id)
+  {
+    Donor donor = Donor.findById(id);
+    renderJSON (gson.toJson(donor.donations));
+  }
+  
+  public static void getDonation (Long id, Long donationId)
+  {
+   Donation donation = Donation.findById(donationId);
    renderJSON (gson.toJson(donation));
   }
 
-  public static void createDonation(JsonElement body)
+  public static void createDonation(Long id, JsonElement body)
   {
+    Donor donor = Donor.findById(id);
     Donation donation = gson.fromJson(body.toString(), Donation.class);
     Donation newDonation = new Donation (donation.amount, donation.method);
     newDonation.id = null;
+    donor.donations.add(newDonation);
     newDonation.save();
     renderJSON (gson.toJson(newDonation));
   }  
 
-  public static void deleteDonation(Long id)
+  public static void deleteDonation(Long id, Long donationId)
   {
-    Donation donation = Donation.findById(id);
+    Donation donation = Donation.findById(donationId);
     if (donation == null)
     {
       notFound();
@@ -46,10 +61,4 @@ public class DonationsAPI extends Controller
       renderJSON (gson.toJson(donation));
     }
   }  
-
-  public static void deleteAllDonations()
-  {
-    Donation.deleteAll();
-    renderText("success");
-  }
 }

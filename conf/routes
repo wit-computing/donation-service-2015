@@ -3,20 +3,22 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                        Application.index
 
-GET     /api/donors                          DonorsAPI.getAllDonors
-GET     /api/donors/{id}                     DonorsAPI.getDonor
-POST    /api/donors                          DonorsAPI.createDonor
-DELETE  /api/donors/{id}                     DonorsAPI.deleteDonor
-DELETE  /api/donors                          DonorsAPI.deleteAllDonors
+GET     /api/donors                              DonorsAPI.getAllDonors
+GET     /api/donors/{id}                         DonorsAPI.getDonor
+POST    /api/donors                              DonorsAPI.createDonor
+DELETE  /api/donors/{id}                         DonorsAPI.deleteDonor
+DELETE  /api/donors                              DonorsAPI.deleteAllDonors
+
+GET     /api/donations                           DonationsAPI.getAllDonations
+DELETE  /api/donations                           DonationsAPI.deleteAllDonations
+GET     /api/donors/{id}/donations               DonationsAPI.getDonations
+GET     /api/donors/{id}/donations/{donationId}  DonationsAPI.getDonation
+POST    /api/donors/{id}/donations               DonationsAPI.createDonation
+DELETE  /api/donors/{id}/donations/{donationId}  DonationsAPI.deleteDonation
 
 
-GET     /api/donations                       DonationsAPI.getAllDonations
-GET     /api/donations/{id}                  DonationsAPI.getDonation
-POST    /api/donations                       DonationsAPI.createDonation
-DELETE  /api/donations/{id}                  DonationsAPI.deleteDonation
-DELETE  /api/donations                       DonationsAPI.deleteAllDonations
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
