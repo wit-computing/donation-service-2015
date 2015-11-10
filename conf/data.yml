@@ -28,6 +28,10 @@ Donor(marge):
     lastName: Simpson
     email: marge@simpson.com
     password: secret
+    donations:
+        - a
+        - b
+        - c
 
 Donor(lisa):
     usaCitizen: true
@@ -35,6 +39,8 @@ Donor(lisa):
     lastName: Simpson
     email: lisa@simpson.com
     password: secret
+    donations:
+        - d
 
 Donor(bart):
     usaCitizen: true
