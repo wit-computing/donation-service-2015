@@ -41,11 +41,10 @@ public class DonationsAPI extends Controller
   {
     Donor donor = Donor.findById(id);
     Donation donation = gson.fromJson(body.toString(), Donation.class);
-    Donation newDonation = new Donation (donation.amount, donation.method);
-    newDonation.id = null;
-    donor.donations.add(newDonation);
-    newDonation.save();
-    renderJSON (gson.toJson(newDonation));
+    donation.id = null;
+    donor.donations.add(donation);
+    donor.save();
+    renderJSON (gson.toJson(donation));
   }  
 
   public static void deleteDonation(Long id, Long donationId)
