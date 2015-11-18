@@ -16,14 +16,12 @@ Donation(d):
 
 
 Donor(homer):
-    usaCitizen: true
     firstName: Homer
     lastName: Simpson
     email: homer@simpson.com
     password: secret
 
 Donor(marge):
-    usaCitizen: true
     firstName: Marge
     lastName: Simpson
     email: marge@simpson.com
@@ -34,7 +32,6 @@ Donor(marge):
         - c
 
 Donor(lisa):
-    usaCitizen: true
     firstName: Lisa
     lastName: Simpson
     email: lisa@simpson.com
@@ -43,14 +40,12 @@ Donor(lisa):
         - d
 
 Donor(bart):
-    usaCitizen: true
     firstName: Bart
     lastName: Simpson
     email: bart@simpson.com
     password: secret
 
 Donor(maggie):
-    usaCitizen: true
     firstName: Maggie
     lastName: Simpson
     email: maggie@simpson.com
