@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Donation Request' /} 
+
+<nav class="ui inverted menu">
+  <header class="header item"> <a href="/"> Donation </a> </header>
+  <div class="right menu">
+    <a class="active item" href="/donation"> Donate</a>
+    <a class="item" href="/donation/report">  Report</a>
+    <a class="item" href="/logout">  Logout</a>
+  </div>
+</nav>    
+
+<section class="ui raised segment">
+ 
+  #{include "segments/donate.html" /} 
+       
+  <div class="ui  divider"></div>
+  
+  <div class="ui teal progress"  data-percent="${progress}" id="mainprogress">
+    <div class="bar"> </div>
+  </div>  
+  
+</section>

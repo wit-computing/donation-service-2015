@@ -1,0 +1,13 @@
+#{extends 'main.html' /} 
+#{set title:'Report' /} 
+
+<nav class="ui inverted menu">
+  <header class="header item"> <a href="/"> Donation </a> </header>
+  <div class="right menu">
+    <a class="item" href="/donation"> Donate</a>
+    <a class="active item" href="/donation/report">  Report</a>
+    <a class="item" href="/logout">  Logout</a>
+  </div>
+</nav>    
+
+#{include "segments/report.html" /} 
