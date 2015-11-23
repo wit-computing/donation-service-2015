@@ -3,8 +3,21 @@
 # ~~~~
 
 # Home page
-GET     /                                        Application.index
+GET      /                                       Accounts.index
 
+# Accounts page
+GET     /signup                                  Accounts.signup
+GET     /login                                   Accounts.login
+GET     /logout                                  Accounts.logout
+POST    /authenticate                            Accounts.authenticate
+POST    /register                                Accounts.register
+
+# Donation pages
+GET     /donation                                Donations.index
+POST    /donation/donate                         Donations.donate
+GET     /donation/report                         Donations.renderreport
+
+# API
 GET     /api/donors                              DonorsAPI.getAllDonors
 GET     /api/donors/{id}                         DonorsAPI.getDonor
 POST    /api/donors                              DonorsAPI.createDonor
@@ -17,7 +30,6 @@ GET     /api/donors/{id}/donations               DonationsAPI.getDonations
 GET     /api/donors/{id}/donations/{donationId}  DonationsAPI.getDonation
 POST    /api/donors/{id}/donations               DonationsAPI.createDonation
 DELETE  /api/donors/{id}/donations/{donationId}  DonationsAPI.deleteDonation
-
 
 
 # Ignore favicon requests
