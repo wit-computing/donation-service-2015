@@ -27,4 +27,14 @@ public class Donor extends Model
     this.email = email;
     this.password = password;
   } 
+  
+  public static Donor findByEmail(String email)
+  {
+    return find("email", email).first();
+  }  
+  
+  public boolean checkPassword(String password)
+  {
+    return this.password.equals(password);
+  } 
 }
